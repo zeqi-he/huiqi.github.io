@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#FFF" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>Happy birthday for my friends ~ ~</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://gw.alipayobjects.com/zos/k/vx/favicon.svg" />
+
+    <meta name="title" content="Happy birthday for my friends ~ ~" />
+    <meta name="author" content="Tw93" />
+    <meta property="og:title" content="Happy birthday for my friends ~ ~" />
+    <meta property="og:description" content="画一个兔子庆祝下吧~"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tw93.netlify.app" />
+    <meta property="og:image" content="https://tw93.netlify.app/img/1024-logo.png"/>
+
+    <meta name="twitter:creator" content="@HiTw93" />
+    <meta name="twitter:site" content="https://tw93.netlify.app" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tw93.netlify.app" />
+    <meta property="twitter:image" content="https://tw93.netlify.app/img/1024-banner.png" />
+    <meta property="twitter:title" content="Happy birthday for my friends ~ ~" />
+    <meta property="twitter:description" content="用代码画一个兔子庆祝下吧~" />
+
+    <style>
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('https://gw.alipayobjects.com/os/k/app/JetBrainsMono-Regular.ttf') format('truetype');
+      }
+
+      * {
+        font-family: JetBrains Mono, SF Mono, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+      body {
+        height: 100vh;
+        color: blueviolet;
+        background-color: darkgrey;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    </style>
+<style>
+  #surprise0{
+    height:10%;
+    width:10%;
+    color: darkgrey;
+    position:absolute;
+    top:0;
+    right:0;
+  }
+  #surprise0:hover{
+    color: pink;
+  }
+  #surprise1{
+    height:10%;
+    width:10%;
+    color: darkgrey;
+    position:absolute;
+    top:45%;
+    right:50%;
+  }
+  #surprise1:hover{
+    color: purple;
+  }
+
+</style>
+  </head>
+  <body>
+    <script>
+      console.log('祝你以后体测跑的比兔子还快');
+      console.log('不知道咋祝福了，那就祝福你观影愉快吧');
+      console.log('发现这个彩蛋需要技术的');
+      let styles = `\
+/*
+* 今年是兔年；
+* 没啥才艺；
+* 作为好朋友；
+* 那就画一个兔子庆祝下吧~
+*/
+/* 先搞一个写代码的 pre 标签试试 */
+pre {
+  color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  padding: 24px 16px;
+  margin-top: 0;
+  overflow-y: auto;
+  transition: all 500ms;
+}
+
+/* 不太喜欢斜体，变正好了 */
+pre em {
+  font-style: normal;
+}
+
+/* 为了更好的画兔子，我们把代码移到下面来 */
+pre {
+  top: 42%;
+  height: 58%
+  z-index: 1;
+}
+
+body{
+  background-color:darkgrey;
+}
+
+/* 这不得来给代码颜色高亮下 */
+.selector, .selector .key {
+  color: yellow;
+}
+
+.key, .comment {
+  color: green;
+}
+
+.value {
+  color: red;
+}
+
+/*来一个背景框*/
+.box-canvas{
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 10vmin;
+  margin-bottom: 10vmin;
+  width: 80vmin;
+  height:80vmin;
+}
+/*黑色的魔术师帽子，*/
+.hat {
+  --hat-color: #131416;
+  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 40vmin;
+  height: 30vmin;
+  background: var(--hat-color);
+  border-radius: 0 0 50% 50% /0 0 20% 20% ;
+}
+
+/*给帽子来点装饰，加一根带子吧*/
+/* Hat stripe */
+.hat::before {
+  content: '';
+  position: absolute;
+  width: 40vmin;
+  height: 10vmin;
+  box-shadow: 0 5vmin 0 #8E0C8E;
+  border-radius: 0 0 50% 50%;
+}
+/*帽檐要宽一点*/
+.hat::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10vmin;
+  width: 55vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  box-shadow: 0 6vmin 0 var(--hat-color);
+}
+/*后面完善一下*/
+.backfill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24vmin;
+  width: 53vmin;
+  height: 8vmin;
+  background: #333642;
+  border-radius: 50%;
+  border: 1vmin solid #131416;
+}
+
+/*来一个小白兔，别问为什么从天上掉下来，应该是艺术*/
+.rabbit {
+  position: absolute;
+  top: 0vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vmin;
+  height: 55vmin;
+  overflow: hidden;
+}
+/*身体*/
+.body {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25vmin;
+  height: 20vmin;
+  background: white;
+  border-radius: 50% 50% 0 0;
+  bottom: -5vmin;
+}
+/*大圆脑袋*/
+.head {
+  position: absolute;
+  top: 25vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20vmin;
+  height: 20vmin;
+  background: white;
+  border-radius: 30% 30% 50% 50%;
+  border-bottom: 1vmin solid #C4C6CE;
+}
+/*开始为小兔加上眼睛吧*/
+.eye {
+  position: absolute;
+  top: 4vmin;
+  width: 3vmin;
+  height: 3vmin;
+  background: black;
+  border-radius: 50%;
+  border: 1vmin solid #24A9FC;
+}
+/*左眼*/
+.eye.left {
+  left: 3vmin;
+}
+/*右眼*/
+.eye.right {
+  right: 3vmin;
+}
+/*这才是点睛之笔撒*/
+.eye::after {
+  content: '';
+  position: absolute;
+  width: 1.5vmin;
+  height: 1.5vmin;
+  background: white;
+  border-radius: 50%;
+  bottom: 0;
+}
+/*眼睛画好了就到鼻子了，虽然有点难*/
+.nose {
+  position: absolute;
+  top: 11vmin;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 2vmin solid transparent;
+  border-right: 2vmin solid transparent;
+  border-top: 2.5vmin solid pink;
+}
+/*兔子最大的特征当然是耳朵啦*/ 
+.ear {
+  position: absolute;
+  width: 4vmin;
+  height: 15vmin;
+  top: -17vmin;
+  background: pink;
+  border-radius: 50% 50% 0 0;
+  border: 2vmin solid white;
+}
+
+.ear.left {
+  left: 1vmin;
+  transform: rotate(-10deg);
+  transform-origin: bottom right;
+}
+
+.ear.right {
+  right: 1vmin;
+  transform: rotate(10deg);
+  transform-origin: bottom left;
+}
+/*还有爪子*/
+.paw {
+  position: absolute;
+  width: 8vmin;
+  height: 5vmin;
+  background: white;
+  border-radius: 30% 30% 50% 50%;
+  border-top: 1vmin solid #C4C6CE;
+  top: 48vmin;
+}
+
+.paw.left {
+  left: 28vmin;
+}
+
+.paw.right {
+  right: 28vmin;
+}
+
+/*
+*  这样就完成了
+*  兔年快乐
+*  祝你
+*  诸事顺利
+*  嘎嘎乱杀 - 指游戏哈
+*  兔飞猛进
+*  大展宏图
+*
+*  祝福的话说得太多了，应该还有几个彩蛋吧，自己找
+
+*  还有：声明一下，框架和兔子的画法都是cv的，但咱们计科都讲究开源
+*/
+
+
+
+
+
+/*
+* 下面没啥了，施主请回吧
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* 
+* 坚持到最后才能看到咧
+* 看到这说明你肯定能成功
+* 毕竟，坚持就会胜利
+* 这是彩蛋二了
+* 加油哈，最后一个彩蛋很难的
+* 但我这么好，肯定不会让你看不到
+* 以下是提示
+* - 只需要点击键盘上一个按键就ok了
+* - 不准直接一通狂按啊
+* - 这个key带有数字 & 字母
+* - 这个按键点击之后可以找一下控制台，那你似乎有彩蛋
+* - 不行就摇人吧！！！
+*
+`;
+
+      const getStyleHtml = function () {
+        return document.getElementById('style-text').innerHTML;
+      };
+
+      let openComment = false;
+
+      const writeStyleChar = function (which) {
+        if (which === '/' && !openComment) {
+          openComment = true;
+          styles = getStyleHtml() + which;
+        } else if (which === '/' && openComment) {
+          openComment = false;
+          styles = getStyleHtml().replace(
+            /(\/[^\/]*\*)$/,
+            '<em class="comment">$1/</em>',
+          );
+        } else if (which === ':') {
+          styles = getStyleHtml().replace(
+            /([a-zA-Z- ^\n]*)$/,
+            '<em class="key">$1</em>:',
+          );
+        } else if (which === ';') {
+          styles = getStyleHtml().replace(
+            /([^:]*)$/,
+            '<em class="value">$1</em>;',
+          );
+        } else if (which === '{') {
+          styles = getStyleHtml().replace(
+            /(.*)$/,
+            '<em class="selector">$1</em>{',
+          );
+        } else {
+          styles = getStyleHtml() + which;
+        }
+        document.getElementById('style-text').innerHTML = styles;
+        return document
+          .getElementById('style-tag')
+          .insertAdjacentHTML('beforeend', which);
+      };
+
+      const writeStyles = function (message, index, interval) {
+        if (index < message.length) {
+          const pre = document.getElementById('style-text');
+          pre.scrollTop = pre.scrollHeight;
+          writeStyleChar(message[index++]);
+          return setTimeout(
+            () => writeStyles(message, index, interval),
+            interval,
+          );
+        }
+      };
+      // 将一段HTML代码插入到某个位置
+      document.body.insertAdjacentHTML(
+        'beforeend',
+        `\<style id="style-tag"></style>
+          <div class="github-box">          
+            <span class="github"><i><i></i></i></span>
+         </div>
+         <pre id="style-text"></pre>
+`,
+      );
+      writeStyles(styles, 0 , 0.1);
+    </script>
+
+<div class="box-canvas">
+  <div class="backfill"></div>
+  <div class="rabbit">
+    <div class="body"></div>
+    <div class="head">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="nose"></div>
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+    </div>
+  </div>
+  <div class="hat"></div>
+  <div class="paw left"></div>
+  <div class="paw right"></div>
+</div>
+  
+<div id = 'surprise1'>兔然暴富------这是一个彩蛋</div>
+<div id = 'surprise0'>藏在边边角角，也会嘎嘎发光------这是一个彩蛋</div>
+  </body>
+</html>
